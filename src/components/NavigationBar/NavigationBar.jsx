@@ -5,8 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Menu, MenuItem } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import {ReactComponent as DimensionIcon} from './../../Logo/DimensionIcon.svg'
 import { useState } from 'react';
 
@@ -24,13 +22,23 @@ const NavigationBar = () => {
       links: ['About', 'Roadmap', 'Contact Us']
     }
   ]
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const [anchorEl, setAnchorEl] = useState({
+    target: null,
+    index: null
+  });
+  console.log(anchorEl)
+  const open = Boolean(anchorEl.target);
+  const handleClick = (event, index) => {
+    setAnchorEl({
+      target: event.currentTarget,
+      index: index
+    });
   };
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchorEl({
+    target: null,
+    index: null
+  });
   };
 
   return (
@@ -47,14 +55,24 @@ const NavigationBar = () => {
             navigationItems.map(({name, links}, index) => {
               return (
                 <>
-                  <Button key={index} variant='text' onClick={handleClick} sx={{color: '#FFFFFF', fontSize: '20px', mr: 2}}>
+                  <Button key={index} variant='text' onClick={(e) => handleClick(e, index)} sx={{color: '#FFFFFF', fontSize: '20px', mr: 2}}>
                   {name}
                   </Button>
                   {
-                    links && <Menu anchorEl={anchorEl} open={open} onClose={handleClose} anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}>
+                    links && 
+                    <Menu 
+                      anchorEl={anchorEl.target} 
+                      open={open && anchorEl.index === index} 
+                      onClose={handleClose} 
+                      anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                      }}
+                    >
                     {
                       links.map((item, index) => {
                         return(
