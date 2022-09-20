@@ -71,7 +71,7 @@ const NavigationBar = () => {
             })
            }
           </Box>
-          <Button color="inherit">Login</Button>
+          <Button color="secondary" variant='contained' sx={{fontSize: '18px'}}>Get in Touch</Button>
         </Toolbar>
       </AppBar>
     </Box>
