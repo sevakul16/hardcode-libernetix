@@ -9,25 +9,25 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {ReactComponent as DimensionIcon} from './../../Logo/DimensionIcon.svg'
 
 const NavigationBar = () => {
+  const navigationItems = ['Home', 'Solutions', 'Company']
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Box sx={{width: 50}}>
-            <DimensionIcon style={{fill: 'white'}}/>
+          <Box sx={{flexGrow: 1}}>
+            <Box sx={{width: 50}}>
+              <DimensionIcon style={{fill: 'white'}}/>
+            </Box>
           </Box>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
+          <Box sx={{mr: 5}}>
+           {
+            navigationItems.map((item, index) => {
+              return <Button key={index} variant='text' sx={{color: '#FFFFFF', fontSize: '20px', mr: 2}}>
+                {item}
+              </Button>
+            })
+           }
+          </Box>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
