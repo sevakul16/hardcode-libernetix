@@ -8,8 +8,8 @@ function App() {
   return (
     <ThemeProvider theme={LiberTheme}>
       <NavigationBar />
-      <Typography sx={{fontFamily: 'Orbitron'}}>Hello world</Typography>
-      <Footer/>
+      <Typography sx={{ fontFamily: 'Orbitron' }}>Hello world</Typography>
+      <Footer />
     </ThemeProvider>
   );
 }
