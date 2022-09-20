@@ -6,12 +6,16 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import {ReactComponent as DimensionIcon} from './../../Logo/DimensionIcon.svg'
 
 const NavigationBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          <Box sx={{width: 50}}>
+            <DimensionIcon style={{fill: 'white'}}/>
+          </Box>
           <IconButton
             size="large"
             edge="start"
