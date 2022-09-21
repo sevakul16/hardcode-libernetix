@@ -21,6 +21,9 @@ const LiberTheme = createTheme({
       main: '#2196f3',
     },
   },
+  gradient: {
+    background: '-webkit-linear-gradient(#eee, #333)'
+  }
 })
 
 export default LiberTheme
