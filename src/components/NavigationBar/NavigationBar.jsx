@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Menu, MenuItem } from '@mui/material';
-import {ReactComponent as DimensionIcon} from './../../Logo/DimensionIcon.svg'
+import { ReactComponent as DimensionIcon } from './../../Logo/DimensionIcon.svg'
 import { useState } from 'react';
 
 const NavigationBar = () => {
@@ -36,60 +36,60 @@ const NavigationBar = () => {
   };
   const handleClose = () => {
     setAnchorEl({
-    target: null,
-    index: null
-  });
+      target: null,
+      index: null
+    });
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
-          <Box sx={{flexGrow: 1}}>
-            <Box sx={{width: 50}}>
-              <DimensionIcon style={{fill: 'white'}}/>
+          <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ width: 50 }}>
+              <DimensionIcon style={{ fill: 'white' }} />
             </Box>
           </Box>
-          <Box sx={{mr: 5}}>
-           {
-            navigationItems.map(({name, links}, index) => {
-              return (
-                <>
-                  <Button key={index} variant='text' onClick={(e) => handleClick(e, index)} sx={{color: '#FFFFFF', fontSize: '20px', mr: 2}}>
-                  {name}
-                  </Button>
-                  {
-                    links && 
-                    <Menu 
-                      anchorEl={anchorEl.target} 
-                      open={open && anchorEl.index === index} 
-                      onClose={handleClose} 
-                      anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}
-                    >
+          <Box sx={{ mr: 5 }}>
+            {
+              navigationItems.map(({ name, links }, index) => {
+                return (
+                  <>
+                    <Button key={index} variant='text' onClick={(e) => handleClick(e, index)} sx={{ color: '#FFFFFF', fontSize: '20px', mr: 2 }}>
+                      {name}
+                    </Button>
                     {
-                      links.map((item, index) => {
-                        return(
-                          <MenuItem key={index} onClick={handleClose}>
-                            <Typography textAlign="center">{item}</Typography>
-                          </MenuItem>
-                        )
-                      })
+                      links &&
+                      <Menu
+                        anchorEl={anchorEl.target}
+                        open={open && anchorEl.index === index}
+                        onClose={handleClose}
+                        anchorOrigin={{
+                          vertical: 'bottom',
+                          horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                          vertical: 'top',
+                          horizontal: 'center',
+                        }}
+                      >
+                        {
+                          links.map((item, index) => {
+                            return (
+                              <MenuItem key={index} onClick={handleClose}>
+                                <Typography textAlign="center">{item}</Typography>
+                              </MenuItem>
+                            )
+                          })
+                        }
+                      </Menu>
                     }
-                  </Menu>
-                  }
-                </>
-              )
-            })
-           }
+                  </>
+                )
+              })
+            }
           </Box>
-          <Button color="secondary" variant='contained' sx={{fontSize: '18px'}}>Get in Touch</Button>
+          <Button color="secondary" variant='contained' sx={{ fontSize: '18px' }}>Get in Touch</Button>
         </Toolbar>
       </AppBar>
     </Box>

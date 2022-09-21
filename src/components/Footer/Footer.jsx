@@ -93,7 +93,7 @@ const Footer = () => {
                         }
                     </Grid>
                 </Grid>
-                <Grid container direction='row' sx={{ mt: 4 }}>
+                <Grid container direction='row' sx={{ my: 4 }}>
                     <Typography sx={{ color: '#636a7e' }}>
                         &copy; {new Date().getFullYear()} Libernetix Inc.
                     </Typography>
