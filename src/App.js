@@ -1,3 +1,4 @@
+import './App.css';
 import NavigationBar from './components/NavigationBar/NavigationBar'
 import { ThemeProvider } from '@mui/material/styles';
 import LiberTheme from './theme/LibernetixTheme';
