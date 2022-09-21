@@ -1,7 +1,11 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import { Container } from '@mui/system';
+import { useTheme } from '@mui/material/styles';
 
 let white = '#fff'
+let grey = 'rgb(236,236,240)'
+let radius = '10px'
 
 export const styles = {
     videoBackground: {
@@ -34,12 +38,54 @@ export const styles = {
     },
     marginTop30: {
         marginTop: '30px'
+    },
+    sectionLabel: {
+        color: white,
+        backgroundColor:'secondary.main',
+        py:1,
+        px:3,
+        borderRadius: radius,
+        fontWeight:500
+    },
+    sectionHeading: {
+        fontSize: '50px',
+        fontFamily: 'Orbitron',
+        textAlign: 'center',
+        fontWeight: '500'
+    },
+    sectionContainer: {
+        my: 4,
+        py: 4
+    },
+    solutionBlock: {
+        backgroundColor: grey,
+        px:4,
+        py:5,
+        borderRadius: radius,
+        mt:2
+    },
+    solutionBlockHeading: {
+        fontSize: '30px',
+        fontWeight: '500',
+        mb:1
+    },
+    fullHeight:{
+        height: '100%'
+    },
+    itemBottom:{
+        display:'flex',
+        alignContent: 'flex-end'
     }
+    
 };
 
 export const ButtonSecondary = styled(Button)(({ theme }) => ({
     textTransform: 'none',
-    borderRadius: '10px',
-    fontSize: '20px',
-    padding: '10px 15px 10px 15px'
+    borderRadius: radius,
+    fontSize: '15px',
+    padding: '10px 25px 10px 25px'
+}));
+
+export const LabelHeading = styled(Button)(({theme})=>({
+    borderRadius: radius,
 }));

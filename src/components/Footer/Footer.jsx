@@ -16,7 +16,6 @@ import { footerLinks } from './FooterLinks';
 const Footer = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
     return (
         <Container sx={{ borderTop: 1, pt:8, borderColor: 'rgb(217,217,217)'}}>
             <Box>
@@ -99,7 +98,7 @@ const Footer = () => {
                     </Typography>
                 </Grid>
             </Box>
-        </Container >
+        </Container>
     )
 }
 
