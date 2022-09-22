@@ -13,6 +13,9 @@ import { useTheme } from '@mui/material/styles';
 import { SectionContainer } from '../../theme/StyleMain';
 import { styles } from '../../theme/StyleMain';
 import { ButtonSecondary } from '../../theme/StyleMain';
+import cardsImage from './images/credit-cards-02.svg'
+import gatewayIcon from './images/gateawey-icon-01.svg'
+import securityIcon from './images/anti-froud-icon-01.svg'
 
 
 const SolutionsSection = () => {
@@ -29,9 +32,9 @@ const SolutionsSection = () => {
                         a one-step solution from <Box component="span" sx={styles.headingGradient}>Libernetix</Box>
                     </Typography>
                 </Grid>
-                <Box>
-                    <Grid container sx={styles.solutionBlock}>
-                        <Grid item>
+                <Box sx={{ paddingTop: '150px' }}>
+                    <Grid container sx={styles.solutionBlockBig}>
+                        <Grid item xs sx={{ px: 4, py: 5 }}>
                             <Typography sx={styles.solutionBlockHeading}>
                                 Card acquiring
                             </Typography>
@@ -41,12 +44,23 @@ const SolutionsSection = () => {
                             </Typography>
                             <ButtonSecondary color="secondary" variant='contained' sx={{ mt: 4 }}>Learn more</ButtonSecondary>
                         </Grid>
+                        <Grid item xs sx={styles.cardsBackground}>
+                            <Box
+                                component="img"
+                                sx={{
+                                    position: 'absolute',
+                                    bottom: 0
+                                }}
+                                alt="credit cards"
+                                src={cardsImage}
+                            />
+                        </Grid>
                     </Grid>
                     <Grid container direction='row' spacing={2}>
                         <Grid item xs={6}>
                             <Grid container direction='column'>
-                                <Grid item sx={styles.solutionBlock}>
-                                    <Grid container>
+                                <Grid item>
+                                    <Grid container sx={styles.solutionBlock}>
                                         <Grid item>
                                             <Typography sx={styles.solutionBlockHeading}>
                                                 Payment gateway
@@ -57,10 +71,13 @@ const SolutionsSection = () => {
                                             </Typography>
                                             <ButtonSecondary color="secondary" variant='contained' sx={{ mt: 4 }}>Learn more</ButtonSecondary>
                                         </Grid>
+                                        <Grid item xs sx={{ display: 'flex', justifyContent: 'end', alignItems: 'end' }}>
+                                            <Box sx={styles.solutionIconBox} style={{backgroundImage: `url("${gatewayIcon}")`}}/>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid item sx={styles.solutionBlock}>
-                                    <Grid container>
+                                <Grid item>
+                                    <Grid container sx={styles.solutionBlock}>
                                         <Grid item>
                                             <Typography sx={styles.solutionBlockHeading}>
                                                 Anti-froud system
@@ -71,13 +88,18 @@ const SolutionsSection = () => {
                                             </Typography>
                                             <ButtonSecondary color="secondary" variant='contained' sx={{ mt: 4 }}>Learn more</ButtonSecondary>
                                         </Grid>
+                                        <Grid item xs sx={{ display: 'flex', justifyContent: 'end', alignItems: 'end' }}>
+                                            <Box sx={styles.solutionIconBox}>
+                                            <Box sx={styles.solutionIconBox} style={{backgroundImage: `url("${securityIcon}")`}}/>
+                                            </Box>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Grid item xs={6}>
                             <Grid container direction='column' sx={styles.fullHeight}>
-                                <Grid item sx={[styles.solutionBlock,styles.fullHeight, styles.itemBottom]}>
+                                <Grid item sx={[styles.solutionBlock, styles.fullHeight, styles.itemBottom]}>
                                     <Grid container>
                                         <Grid item>
                                             <Typography sx={[styles.solutionBlockHeading]}>

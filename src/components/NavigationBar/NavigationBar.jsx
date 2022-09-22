@@ -87,7 +87,7 @@ const NavigationBar = () => {
               )
             })
           }
-          {/* <ButtonSecondary color="secondary" variant='contained' sx={{ fontSize: '18px' }}>Get in Touch</ButtonSecondary> */}
+          <ButtonSecondary color="secondary" variant='contained' sx={{ fontSize: '18px' }}>Get in Touch</ButtonSecondary>
         </Toolbar>
       </AppBar>
     </Box >

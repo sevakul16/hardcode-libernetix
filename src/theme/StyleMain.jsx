@@ -64,6 +64,11 @@ export const styles = {
         borderRadius: radius,
         mt:2
     },
+    solutionBlockBig: {
+        width: '100%',
+        borderRadius: radius,
+        backgroundColor: grey,
+    },
     solutionBlockHeading: {
         fontSize: '30px',
         fontWeight: '500',
@@ -75,6 +80,19 @@ export const styles = {
     itemBottom:{
         display:'flex',
         alignContent: 'flex-end'
+    },
+    solutionIconBox: {
+        width:'120px',
+        height: '120px',
+        borderRadius: '50%',
+        backgroundColor: white,
+        boxShadow: '0px 0px 10px 0px rgba(107,107,107,0.15)',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '60%'
+    },
+    cardsBackground: {
+        position: 'relative'
     }
     
 };
